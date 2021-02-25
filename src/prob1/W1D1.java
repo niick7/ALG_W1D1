@@ -27,7 +27,7 @@ public class W1D1 {
     Instant start = Instant.now();
     System.out.println("start: " + start.toString());
     List<Integer> numEvens = new ArrayList<>();
-    for(int i = 0; i < numbers.size(); i++){
+    for(int i = 0; i < numbers.size() - 1; i++){
       Integer number = numbers.get(i);
       if (number%2 == 0) {
         numEvens.add(number);
@@ -35,8 +35,8 @@ public class W1D1 {
     }
 
     int largestDistance = 0;
-    for(int i = 0; i < numEvens.size() - 1; i++){
-      for(int j = 1; j < numEvens.size(); j++) {
+    for(int i = 0; i < numEvens.size() - 2; i++){
+      for(int j = 1; j < numEvens.size() - 1; j++) {
         int distance = numEvens.get(i) - numEvens.get(j);
         if(distance < 0)
           distance *= -1;
@@ -62,11 +62,11 @@ public class W1D1 {
     System.out.println("start: " + start.toString());
 
     int largestDistance = 0;
-    for(int i = 0; i < numbers.size() - 1; i++){
+    for(int i = 0; i < numbers.size() - 2; i++){
       if (numbers.get(i) % 2 != 0) {
         continue;
       }
-      for(int j = 1; j < numbers.size(); j++) {
+      for(int j = 1; j < numbers.size() - 1; j++) {
         if (numbers.get(j) % 2 != 0) {
           continue;
         }
